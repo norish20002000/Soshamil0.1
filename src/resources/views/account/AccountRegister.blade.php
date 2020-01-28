@@ -34,8 +34,9 @@
             <div>
                 <ul class="account_text">
                     <li class="sns_name">
-                        <label for="sns_name_label">SNS名 : </label>
-                        <input type='text' name="sns_name" placeholder="twitter">
+                        <snspulldown-component></snspulldown-component>
+                        {{-- <label for="sns_name_label">SNS名 : </label>
+                        <input type='text' name="sns_name" placeholder="twitter"> --}}
                     </li>
                     <li class="account_name">
                         <label for="account_name_label">アカウント名 : </label>
@@ -48,9 +49,9 @@
                 </ul>
             </div>
         </div>
-        {{-- <div>
-            <textarea class="account_comment" rows="5" placeholder="コメント"></textarea>
-        </div> --}}
+        <div class="comment_block">
+            <textarea rows="5" placeholder="コメント"></textarea>
+        </div>
         <div class="postBtnContainer" style="text-align: center">
             <input type="submit" value="アカウントを登録する">
         </div>

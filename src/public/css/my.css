@@ -38,6 +38,10 @@
     /* display: flex; */
 }
 
+.account_text {
+    margin-left: -30px;
+}
+
 .account_text li {
     list-style: none;
 }
@@ -47,8 +51,20 @@
     width: 100px;
 }
 
-.account_comment {
-    width: 100%;
+.account_text li input {
+    width: 300px;
+}
+
+.etc_sns {
+    margin-bottom: 5px
+}
+
+.comment_block {
+    text-align: center
+}
+
+.comment_block textarea {
+    width: 90%;
 }
 
 .postBtnContainer input{
