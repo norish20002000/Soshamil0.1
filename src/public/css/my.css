@@ -1,0 +1,70 @@
+.picbox {
+    margin: 0 0 5px 0;
+    background: #f0f7ff;
+    border: dashed 2px #5b8bd0;/*点線*/
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+.picbox p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    /* -webkit- transform: translateY(-50%) translateX(-50%); */
+}
+
+.filelabel {
+    background-color: orange;  /* 背景色 */
+    color: white;              /* 文字色 */
+    border: 2px solid orange;  /* 枠線 */
+    border-radius: 3em;        /* 角丸 */
+    padding: 12px 9px;         /* 内側の余白 */
+    display: inline-block;     /* インラインブロック化 */
+ }
+ .filelabel img {
+    vertical-align: bottom;    /* 画像の垂直方向の配置 */
+ }
+ .filelabel:hover {
+    opacity: 0.5;              /* 半透明 */
+    border: 2px solid red;     /* 枠線(赤色) */
+    cursor: pointer;           /* マウス形状(ポインタ) */
+ }
+ #filesend {
+    display: none;  /* 本来のファイル選択フォームは非表示に */
+ }
+
+.account_info {
+    /* display: flex; */
+}
+
+.account_text li {
+    list-style: none;
+}
+
+.account_text li label {
+    margin-right: 0px;
+    width: 100px;
+}
+
+.account_comment {
+    width: 100%;
+}
+
+.postBtnContainer input{
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #f3cf00;
+  border-radius: 25px;
+  border: 0;
+  box-shadow: 0 2px 0 #d2b300;
+  color: #1e1e1e;
+  display: inline-block;
+  padding: 10px 20px;
+  position: relative;
+  text-decoration: none;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: bold;
+  width: auto;
+}

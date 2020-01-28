@@ -19,3 +19,8 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => 'verified'], function () {
+    Route::get('/accountregister', 'AccountController@registerView')->name('accountregister');
+    Route::post('/accountregister', 'AccountController@register')->name('accountregister');
+});
