@@ -1,41 +1,58 @@
 <template>
     <div>
         <div>
+            <p>{{snsId}}  {{snsEtcName}}</p>
             <label>SNS名 : </label>
-            <select @change="snsChange()" v-model="selected">
-                <option v-for="(sns, key) in snss" :value="key" :key="key">
-                    {{ sns }}
+            <select name="sns_key" @change="snsChange()" v-model="selected">
+                <option v-for="(sns) in snsData" :key="sns.sns_id" :value="sns.sns_id">
+                    {{ sns.sns_name }}
                 </option>
             </select>
         </div>
-        <div class="etc_sns" v-show="selected == length-1">
+        <div class="etc_sns" v-show="selected == 1000">
             <label></label>
-            <input type="text" name="etcsns_name" placeholder="SNS名" />
+            <input type="text" name="sns_etc_name" placeholder="SNS名" :value="stateSnsEtcName"/>
         </div>
     </div>
 </template>
 <script>
 export default {
     props: {
-    },
+        snsId: "",
+        snsEtcName: "",
+        snsData: "",
+        },
     data() {
         return {
-            snss: ['twitter', 'Instagram', 'Facebook', 'その他'],
             length: "",
-            selected: 0,
+            selected: this.snsId ? this.snsId : 0,
+            stateSnsEtcName: this.snsEtcName,
         };
     },
     methods: {
         snsChange: function() {
-            console.log(this.selected)
+            if (this.selected != 1000) {
+                this.stateSnsEtcName = ""
+            }
+            console.log(this.stateSnsEtcName)
         }
     },
-    computed: {
+    watch: {
+        snsId: function(value, oldValue) {
+            // this.snsIdtemp = this.snsId
+            // console.log(this.snsId)
+            console.log(value)
+            console.log("oldValue: " + oldValue)
+            // immediate: true,
+            // handler() {
+            //     console.log(this.snsId)
+            //     this.snsIdtemp = this.snsId
+            // }
+        }
     },
     mounted() {
-        // this.selected = this.snss[0]
-        this.length = this.snss.length
-        console.log('Component mounted.')
+        // console.log('Component mounted.')
+        console.log(this.snsId)
     }
 };
 </script>

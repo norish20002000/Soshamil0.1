@@ -16,3 +16,10 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get("/account", "AccountController@getSnsAccount")->name("accountList");
+
+Route::get('/post','PostController@getPost');
+Route::post('/post','PostController@addPost');
+Route::delete('/post/{id}','PostController@delete');
+Route::put('/post/{id}','PostController@update');

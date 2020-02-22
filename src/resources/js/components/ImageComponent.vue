@@ -4,13 +4,12 @@
             <figure>
                 <img v-bind:src="data.image" width="100px" height="100px">
                 <!-- <figcaption>現在のプロフィール画像</figcaption> -->
-                <p>{{ imgStr }}</p>
             </figure>
         </div>
-        <div>
+        <div v-if="this.accountInfo.user_id == this.authId">
             <label>
                 <span class="filelabel" title="ファイルを選択">
-                    <img src="img/camera-orange-rev.png" width="32" height="26" alt="+画像">
+                    <img src="/img/camera-orange-rev.png" width="32" height="26" alt="+画像">
                     選択
                 </span>
                 <input type="file" ref="file" name="photo" id="filesend" @change="setImage">
@@ -21,19 +20,17 @@
 <script>
 export default {
     props: {
-        isImage: {
-            type: Number,
-            default: 0,
-        },
-        authId: Number,
+        isImage: "",
+        authId: "",
+        accountInfo: "",
     },
     data() {
         return {
             data: {
-                image: this.isImage ? "/storage/account_images/test/"  + this.authId + ".jpg" : "",
+                image: this.isImage ? "/storage/account_images/" + this.accountInfo.id + "/" + this.accountInfo.id + ".jpg" : "/storage/account_images/init/init.jpg",
                 name: "",
+
             },
-            imgStr: this.isImage ? "":"画像",
         };
     },
     methods: {
@@ -58,7 +55,8 @@ export default {
         // }
     },
     mounted() {
-        console.log('Component mounted.')
+        console.log(this.accountInfo)
+        console.log('Component mounted.--------test')
     }
 };
 </script>

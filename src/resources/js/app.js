@@ -23,6 +23,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('top-component', require('./components/TopComponent.vue').default);
 Vue.component('image-component', require('./components/ImageComponent.vue').default);
 Vue.component('snspulldown-component', require('./components/SnsPulldownComponent.vue').default);
+Vue.component('accountlist-componet', require('./components/AccountListComponent.vue').default);
+Vue.component('postlist-componet', require('./components/PostListComponent.vue').default);
 
 
 /**
